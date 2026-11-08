@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Student Home – Bộ thiết kế giao diện Project 1
+  </title>
+  <link href="./css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="logincard" id="login-page">
+   <div class="loginleft">
+    <div style="font-size:38px">
+     ⌂
+    </div>
+    <h1>
+     Student Home
+    </h1>
+    <h3>
+     HỆ THỐNG QUẢN LÝ PHÒNG TRỌ SINH VIÊN
+    </h3>
+    <p>
+     Quản lý phòng trọ, hợp đồng và hóa đơn một cách dễ dàng.
+    </p>
+    <p style="margin-top:90px;font-size:12px">
+     ◈ An toàn · Tiện lợi · Dễ sử dụng
+    </p>
+   </div>
+   <div class="loginright">
+    <h2>
+     Đăng nhập
+    </h2>
+    <p>
+     Chào mừng bạn quay trở lại!
+    </p>
+    <label>
+     Tên đăng nhập
+    </label>
+    <input class="input" placeholder="Tên đăng nhập (bản demo)"/>
+    <label>
+     Mật khẩu
+    </label>
+    <input class="input" placeholder="Mật khẩu (chưa xác thực)" type="password"/>
+    <button class="btn" onclick="start('owner')">
+     Xem demo Chủ trọ →
+    </button>
+    <button class="btn secondary" onclick="start('student')" style="margin-top:10px">
+     Xem demo Sinh viên →
+    </button>
+    <small>
+     BẢN DEMO: hai nút phía trên chỉ đổi giao diện, chưa đăng nhập thật
+    </small>
+   </div>
+  </div>
+  <div class="shell hide" id="app-shell">
+   <aside class="sidebar">
+    <div class="brand">
+     <div class="brandmark">
+      ⌂
+     </div>
+     <div>
+      <strong>
+       Student Home
+      </strong>
+      <small>
+       QUẢN LÝ PHÒNG TRỌ
+      </small>
+     </div>
+    </div>
+    <div class="navlabel">
+     CHỨC NĂNG
+    </div>
+    <nav class="nav" id="nav">
+    </nav>
+   </aside>
+   <section class="main">
+    <header class="topbar">
+     <div>
+      <h2 id="top-title">
+       Tổng quan
+      </h2>
+      <small>
+       Hệ thống quản lý phòng trọ sinh viên
+      </small>
+     </div>
+     <div class="top-right">
+      <select class="role-switch" id="role-select" onchange="changeRole(this.value)">
+       <option value="owner">
+        Vai trò: Chủ trọ
+       </option>
+       <option value="student">
+        Vai trò: Sinh viên
+       </option>
+      </select>
+      <div class="avatar" id="avatar">
+       CT
+      </div>
+      <button class="btn secondary" onclick="logout()">
+       Đăng xuất
+      </button>
+     </div>
+    </header>
+    <main class="content" id="content">
+    </main>
+   </section>
+  </div>
+  <div class="modal-backdrop" id="modal-overlay" onclick="if(event.target===this)closeModal()">
+   <div class="modal">
+    <div class="modal-head">
+     <h3 id="modal-title">
+     </h3>
+     <button class="btn ghost" onclick="closeModal()">
+      ✕
+     </button>
+    </div>
+    <div id="modal-content">
+    </div>
+    <div class="modal-footer">
+     <span id="modal-save-area">
+     </span>
+     <button class="btn secondary" onclick="closeModal()">
+      Đóng bản xem trước
+     </button>
+    </div>
+   </div>
+  </div>
+  <script src="./js/data.js">
+  </script>
+  <script src="./js/admin-pages.js">
+  </script>
+  <script src="./js/student-pages.js">
+  </script>
+  <script src="./js/forms.js">
+  </script>
+  <script src="./js/core.js">
+  </script>
+ </body>
+</html>
+
